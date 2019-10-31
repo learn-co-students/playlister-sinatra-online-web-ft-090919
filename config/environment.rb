@@ -19,5 +19,12 @@ ActiveRecord::Base.establish_connection(
   :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
 )
 
+# require_relative '../app/models/helper'
+# include MyHelper
+
+# extend HelperMethods::ClassHelper
+require_relative '../app/models/concerns/helper'
+include HelperMethods
+
 require_all 'app'
 require_all 'lib'
