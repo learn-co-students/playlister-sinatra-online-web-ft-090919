@@ -1,0 +1,12 @@
+
+<h1>Songs</h1>
+
+<ul>
+  <% @list.each do |item| %>
+
+    <li>
+      <a href="/<%= item.class.to_s.downcase.pluralize %>/<%= item.id %>"><%= item.name %></a>
+    </li>
+
+  <% end %>
+</ul>
